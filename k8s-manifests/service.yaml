@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-quiz-service
+  namespace: k8s-quiz
+spec:
+  selector:
+    app: k8s-quiz
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP

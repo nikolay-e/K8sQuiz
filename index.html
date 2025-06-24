@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K8s & KCNA/KCSA Certification Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kubernetes & KCNA/KCSA Certification Practice</h1>
+            <div class="stats">
+                <span id="score">Score: 0</span>
+                <span id="question-counter">Question 1 of 97</span>
+            </div>
+        </header>
+
+        <main>
+            <div id="start-screen" class="screen active">
+                <h2>Welcome to K8s & KCNA/KCSA Certification Practice</h2>
+                <p>Test your knowledge with questions for CKA, CKAD, and KCNA exams including cloud native and security topics</p>
+                <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+            </div>
+
+            <div id="quiz-screen" class="screen">
+                <div class="question-container">
+                    <h2 id="question-text"></h2>
+                    <div id="options-container" class="options"></div>
+                    <div class="confidence-section">
+                        <h3>How confident are you about your answer?</h3>
+                        <div class="confidence-options">
+                            <label class="confidence-option">
+                                <input type="radio" name="confidence" value="1">
+                                <span class="confidence-label">1 - Guessing</span>
+                                <span class="confidence-desc">Luck or random guess</span>
+                            </label>
+                            <label class="confidence-option">
+                                <input type="radio" name="confidence" value="2">
+                                <span class="confidence-label">2 - Somewhat Sure</span>
+                                <span class="confidence-desc">Sounds right but not certain</span>
+                            </label>
+                            <label class="confidence-option">
+                                <input type="radio" name="confidence" value="3">
+                                <span class="confidence-label">3 - Very Confident</span>
+                                <span class="confidence-desc">Absolutely sure</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-controls">
+                    <button id="prev-btn" class="btn" disabled>Previous</button>
+                    <button id="next-btn" class="btn" disabled>Next</button>
+                    <button id="submit-btn" class="btn btn-primary" style="display: none;">Submit Quiz</button>
+                </div>
+            </div>
+
+            <div id="result-screen" class="screen">
+                <h2>Quiz Complete!</h2>
+                <div class="result-content">
+                    <p class="score-display">Your Score: <span id="final-score"></span>%</p>
+                    <p id="result-message"></p>
+                    <div id="answer-review"></div>
+                    <button id="restart-btn" class="btn btn-primary">Try Again</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

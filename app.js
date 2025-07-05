@@ -1,5 +1,505 @@
 const k8sQuestions = [
     {
+        question: "What is the primary purpose of the Cloud Native Computing Foundation (CNCF)?",
+        options: [
+            "To provide cloud infrastructure services",
+            "To foster the adoption of cloud native technologies and provide vendor-neutral governance",
+            "To develop proprietary cloud solutions",
+            "To certify cloud engineers"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which of the following is NOT a CNCF project maturity level?",
+        options: [
+            "Sandbox",
+            "Incubating",
+            "Graduated",
+            "Certified"
+        ],
+        correct: 3
+    },
+    {
+        question: "What does 'cloud native' primarily refer to?",
+        options: [
+            "Applications that only run in public clouds",
+            "Applications designed to leverage cloud computing frameworks and run in dynamic environments",
+            "Applications that use cloud storage",
+            "Applications that are hosted by cloud providers"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which principle is fundamental to cloud native architecture?",
+        options: [
+            "Monolithic design",
+            "Manual scaling",
+            "Microservices and containerization",
+            "Single point of failure"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is the main benefit of immutable infrastructure?",
+        options: [
+            "Servers can be modified in place",
+            "Servers are replaced rather than modified, reducing configuration drift",
+            "Servers require less maintenance",
+            "Servers cost less to operate"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which technology is essential for implementing microservices architecture?",
+        options: [
+            "Virtual machines only",
+            "Containers and orchestration platforms",
+            "Shared databases",
+            "Monolithic applications"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary advantage of using containers over virtual machines?",
+        options: [
+            "Containers provide better isolation",
+            "Containers are lighter weight and share the host OS kernel",
+            "Containers are more secure",
+            "Containers require less disk space"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which CNCF project is the standard for container orchestration?",
+        options: [
+            "Docker Swarm",
+            "Kubernetes",
+            "OpenShift",
+            "Rancher"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary purpose of service mesh technology?",
+        options: [
+            "To provide storage for microservices",
+            "To manage service-to-service communication, security, and observability",
+            "To deploy containers",
+            "To manage databases"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which of the following is a key principle of DevOps?",
+        options: [
+            "Separate development and operations teams",
+            "Manual deployment processes",
+            "Continuous integration and continuous deployment (CI/CD)",
+            "Quarterly software releases"
+        ],
+        correct: 2
+    },
+    {
+        question: "What does 'Infrastructure as Code' (IaC) mean?",
+        options: [
+            "Writing code to manage applications",
+            "Managing infrastructure through code and version control",
+            "Coding inside infrastructure",
+            "Using infrastructure to write code"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which CNCF project is commonly used for monitoring and alerting?",
+        options: [
+            "Kubernetes",
+            "Prometheus",
+            "Envoy",
+            "Jaeger"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary benefit of using a container registry?",
+        options: [
+            "To run containers",
+            "To store, manage, and distribute container images",
+            "To monitor containers",
+            "To secure containers"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which technology enables 'cattle, not pets' philosophy in infrastructure?",
+        options: [
+            "Manual server management",
+            "Containerization and orchestration",
+            "Physical servers",
+            "Shared databases"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the main purpose of observability in cloud native systems?",
+        options: [
+            "To prevent all errors",
+            "To understand system behavior through metrics, logs, and traces",
+            "To replace monitoring",
+            "To reduce costs"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which security practice is essential for container security?",
+        options: [
+            "Running containers as root",
+            "Using the latest tag for all images",
+            "Scanning container images for vulnerabilities",
+            "Sharing host network namespace"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is the purpose of a Software Bill of Materials (SBOM)?",
+        options: [
+            "To track software costs",
+            "To provide an inventory of software components and dependencies",
+            "To manage software licenses",
+            "To document software features"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which principle is fundamental to Zero Trust security?",
+        options: [
+            "Trust but verify",
+            "Never trust, always verify",
+            "Trust internal networks",
+            "Trust known users"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary purpose of Pod Security Standards in Kubernetes?",
+        options: [
+            "To encrypt pod communication",
+            "To define security policies for pod specifications",
+            "To manage pod storage",
+            "To schedule pods"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which tool is commonly used for policy enforcement in Kubernetes?",
+        options: [
+            "Docker",
+            "Open Policy Agent (OPA)",
+            "Jenkins",
+            "Terraform"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the main benefit of using secrets management in cloud native applications?",
+        options: [
+            "To store configuration data",
+            "To securely store and manage sensitive information like passwords and API keys",
+            "To manage application logs",
+            "To monitor application performance"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which security scanning should be integrated into CI/CD pipelines?",
+        options: [
+            "Only runtime scanning",
+            "Container image vulnerability scanning and static code analysis",
+            "Manual security reviews only",
+            "Network scanning only"
+        ],
+        correct: 1
+    },
+    {
+        question: "What does 'shift-left' mean in cloud native security?",
+        options: [
+            "Moving security to the left side of the data center",
+            "Integrating security practices early in the development lifecycle",
+            "Using left-hand encryption",
+            "Shifting workloads to different regions"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which technology is essential for implementing multi-tenancy in cloud native applications?",
+        options: [
+            "Shared databases",
+            "Namespaces and role-based access control (RBAC)",
+            "Single user accounts",
+            "Shared storage"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary purpose of network policies in Kubernetes?",
+        options: [
+            "To assign IP addresses",
+            "To control traffic flow between pods",
+            "To create load balancers",
+            "To manage DNS resolution"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which practice helps ensure container image integrity?",
+        options: [
+            "Using unsigned images",
+            "Cryptographic signing and verification of container images",
+            "Using the latest tag",
+            "Sharing base images"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the main security risk of running containers with elevated privileges?",
+        options: [
+            "Slower performance",
+            "Potential for container escape and host compromise",
+            "Increased memory usage",
+            "Network connectivity issues"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which CNCF project provides service mesh capabilities?",
+        options: [
+            "Kubernetes",
+            "Envoy",
+            "Prometheus",
+            "Fluentd"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary benefit of using admission controllers in Kubernetes?",
+        options: [
+            "To schedule pods",
+            "To intercept and validate/mutate requests before they reach the API server",
+            "To manage storage",
+            "To handle networking"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which security measure helps prevent privilege escalation in containers?",
+        options: [
+            "Running containers as root",
+            "Using non-root users and dropping capabilities",
+            "Sharing host PID namespace",
+            "Disabling security contexts"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the purpose of runtime security monitoring?",
+        options: [
+            "To scan container images",
+            "To detect anomalous behavior and threats in running containers",
+            "To manage container lifecycle",
+            "To optimize performance"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which technology enables automated scaling in cloud native applications?",
+        options: [
+            "Manual intervention",
+            "Horizontal Pod Autoscaler (HPA) and Vertical Pod Autoscaler (VPA)",
+            "Fixed resource allocation",
+            "Scheduled scaling"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the main purpose of distributed tracing in microservices?",
+        options: [
+            "To monitor individual services",
+            "To track requests across multiple services and understand system behavior",
+            "To secure communications",
+            "To manage storage"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which practice is essential for securing secrets in GitOps workflows?",
+        options: [
+            "Storing secrets in plain text in Git",
+            "Using sealed secrets or external secret management systems",
+            "Sharing secrets between teams",
+            "Hardcoding secrets in applications"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary benefit of using immutable container images?",
+        options: [
+            "Images can be modified after creation",
+            "Images cannot be changed after creation, ensuring consistency and security",
+            "Images require less storage",
+            "Images run faster"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which CNCF project is designed for storing and distributing container images?",
+        options: [
+            "Harbor",
+            "Kubernetes",
+            "Prometheus",
+            "Fluentd"
+        ],
+        correct: 0
+    },
+    {
+        question: "What is the main security benefit of using minimal base images?",
+        options: [
+            "Faster startup times",
+            "Reduced attack surface by minimizing unnecessary components",
+            "Better performance",
+            "Smaller storage requirements"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which technology is commonly used for implementing chaos engineering?",
+        options: [
+            "Load balancers",
+            "Chaos Monkey and similar tools",
+            "Monitoring systems",
+            "Databases"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary purpose of health checks in containerized applications?",
+        options: [
+            "To monitor resource usage",
+            "To determine if an application is running correctly and ready to serve traffic",
+            "To manage storage",
+            "To handle networking"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which security practice helps protect against supply chain attacks?",
+        options: [
+            "Using any available packages",
+            "Verifying software integrity and provenance through SBOMs and signatures",
+            "Avoiding dependency management",
+            "Using only internal tools"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the main benefit of using declarative configuration management?",
+        options: [
+            "Imperative commands are easier",
+            "Desired state is defined and the system converges to that state",
+            "Manual configuration is preferred",
+            "Scripts are more reliable"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which technology enables blue-green deployments in cloud native applications?",
+        options: [
+            "Manual deployment",
+            "Load balancers and container orchestration platforms",
+            "Shared databases",
+            "Monolithic applications"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary purpose of using namespaces in Kubernetes?",
+        options: [
+            "To improve performance",
+            "To provide logical separation and multi-tenancy within a cluster",
+            "To manage storage",
+            "To handle networking"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which security measure is essential for protecting etcd in Kubernetes?",
+        options: [
+            "Using default configurations",
+            "Enabling encryption at rest and in transit, plus restricting access",
+            "Allowing anonymous access",
+            "Disabling authentication"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the main advantage of using container orchestration platforms?",
+        options: [
+            "Manual container management",
+            "Automated deployment, scaling, and management of containerized applications",
+            "Single container deployment",
+            "Reduced automation"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which practice is essential for implementing defense in depth?",
+        options: [
+            "Using only one security control",
+            "Implementing multiple layers of security controls",
+            "Relying on perimeter security only",
+            "Disabling security features"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary benefit of using service accounts in Kubernetes?",
+        options: [
+            "To manage user logins",
+            "To provide identity for pods and manage their permissions",
+            "To store configuration data",
+            "To handle networking"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which technology is commonly used for implementing GitOps?",
+        options: [
+            "FTP servers",
+            "Git repositories with automated deployment tools like ArgoCD or Flux",
+            "Manual deployment scripts",
+            "Shared file systems"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the main purpose of using security contexts in Kubernetes pods?",
+        options: [
+            "To encrypt network traffic",
+            "To define privilege and access control settings for pods and containers",
+            "To manage storage",
+            "To handle DNS resolution"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which practice is essential for secure container image management?",
+        options: [
+            "Using images from untrusted sources",
+            "Regularly updating base images and scanning for vulnerabilities",
+            "Never updating images",
+            "Using only root user images"
+        ],
+        correct: 1
+    },
+    {
         question: "What is the primary role of the kube-apiserver in the Kubernetes control plane?",
         options: [
             "To assign pods to available nodes",
@@ -1071,10 +1571,27 @@ class K8sQuiz {
             const optionDiv = document.createElement('div');
             optionDiv.className = 'option';
             optionDiv.textContent = question.options[originalIndex];
-            optionDiv.addEventListener('click', () => this.selectOption(originalIndex));
             
-            if (this.userAnswers[this.currentQuestion] === originalIndex) {
-                optionDiv.classList.add('selected');
+            // If question hasn't been answered yet, allow clicking
+            if (this.userAnswers[this.currentQuestion] === null) {
+                optionDiv.addEventListener('click', () => this.selectOption(originalIndex));
+            } else {
+                // Question already answered, show feedback and disable
+                optionDiv.classList.add('disabled');
+                const userAnswer = this.userAnswers[this.currentQuestion];
+                const correctAnswer = question.correct;
+                
+                if (originalIndex === userAnswer) {
+                    // This is the user's selected answer
+                    if (userAnswer === correctAnswer) {
+                        optionDiv.classList.add('correct');
+                    } else {
+                        optionDiv.classList.add('incorrect');
+                    }
+                } else if (originalIndex === correctAnswer) {
+                    // This is the correct answer
+                    optionDiv.classList.add('correct');
+                }
             }
             
             this.optionsContainer.appendChild(optionDiv);
@@ -1102,6 +1619,7 @@ class K8sQuiz {
         
         this.updateNavigationButtons();
         this.updateQuestionCounter();
+        this.updateScore();
     }
     
     handleConfidenceChange(e) {
@@ -1112,10 +1630,30 @@ class K8sQuiz {
     selectOption(index) {
         this.userAnswers[this.currentQuestion] = index;
         
+        // Find the display position of the selected original index
+        const shuffledIndices = this.optionMappings[this.currentQuestion];
+        const displayIndex = shuffledIndices.indexOf(index);
+        const correctIndex = this.questions[this.currentQuestion].correct;
+        const correctDisplayIndex = shuffledIndices.indexOf(correctIndex);
+        
         document.querySelectorAll('.option').forEach((option, i) => {
-            option.classList.toggle('selected', i === index);
+            option.classList.remove('selected', 'correct', 'incorrect');
+            option.classList.add('disabled');
+            
+            if (i === displayIndex) {
+                // Show if selected answer is correct or incorrect
+                if (index === correctIndex) {
+                    option.classList.add('correct');
+                } else {
+                    option.classList.add('incorrect');
+                }
+            } else if (i === correctDisplayIndex) {
+                // Always show the correct answer
+                option.classList.add('correct');
+            }
         });
         
+        this.updateScore();
         this.updateNavigationButtons();
     }
 
@@ -1160,6 +1698,18 @@ class K8sQuiz {
 
     updateQuestionCounter() {
         this.questionCounter.textContent = `Question ${this.currentQuestion + 1} of ${this.questions.length}`;
+    }
+
+    updateScore() {
+        // Calculate current score based on answered questions
+        let currentScore = 0;
+        this.questions.forEach((question, index) => {
+            if (this.userAnswers[index] !== null && this.userAnswers[index] === question.correct) {
+                currentScore++;
+            }
+        });
+        this.score = currentScore;
+        this.scoreDisplay.textContent = `Score: ${this.score}`;
     }
 
     submitQuiz() {
